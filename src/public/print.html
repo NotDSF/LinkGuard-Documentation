@@ -270,23 +270,39 @@ Your dashboard will be located at: <strong>linkguard.cc/:name/dashboard</strong>
   "error": "Not Found"
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="luauroblox"><a class="header" href="#luauroblox">Luau/Roblox</a></h1>
-<p>This page teaches you how to use LinkGuard in your Luau/Roblox scripts</p>
-<h2 id="before-obfuscation"><a class="header" href="#before-obfuscation">Before Obfuscation</a></h2>
-<p>Before you obfuscate your script, insert this at the very top of the script and then obfuscate
-<em>(make sure you update <code>PROJECT_NAME</code>)</em></p>
-<pre><code class="language-lua">local LinkGuard = loadstring(game:HttpGet("https://linkguard.cc/dist/luau.lua"))();
-
-if not LinkGuard:ValidateLicense("PROJECT_NAME", Key) then
-    game.Players.LocalPlayer:Kick("Invalid License");
-    return;
-end;
+<div style="break-before: page; page-break-before: always;"></div><h1 id="roblox-integration"><a class="header" href="#roblox-integration">Roblox Integration</a></h1>
+<blockquote>
+<p>This is not intended as a security solution, we recommend using this in combination with Luarmor, or add your own security checks and use a secure obfuscator.</p>
+</blockquote>
+<h2 id="getting-started-1"><a class="header" href="#getting-started-1">Getting Started</a></h2>
+<ol>
+<li>Create a project with 'License Key' as your verification type</li>
+<li>Paste our <a href="https://linkguard.cc/dist/luau.lua">loader</a> to the top of your Roblox script</li>
+<li>Change variable LG_PROJECT to your LinkGuard project name (ex: linkguard.cc/KhysHub/ would be KhysHub)</li>
+</ol>
+<h2 id="runtime-variables"><a class="header" href="#runtime-variables">Runtime Variables</a></h2>
+<p>These variables will be set upon a successful license validation for LinkGuard</p>
+<ul>
+<li><strong>LG_USER_IP</strong>: The user's IP address</li>
+<li><strong>LG_USER_DISCORD_ID</strong>: The user's Discord ID</li>
+<li><strong>LG_USER_EXPIRY</strong>: The UNIX timestamp of license expiration</li>
+<li><strong>LG_USER_KEY</strong>: The provided license key</li>
+<li><strong>LG_IS_VALID</strong>: Default true, will be set to false when the license expires</li>
+</ul>
+<h2 id="distribution"><a class="header" href="#distribution">Distribution</a></h2>
+<h3 id="setting-up-luarmor-skip-if-you-dont-use-it"><a class="header" href="#setting-up-luarmor-skip-if-you-dont-use-it">Setting up Luarmor (skip if you don't use it)</a></h3>
+<ol>
+<li>For the script you've added our loader too, set it to FFA on Luarmor (Free For All)</li>
+<li>This will allow everybody to use your script, not to worry though our loader will allow regular entry for your Luarmor users, and perform LinkGuard license validation for none Luarmor users.</li>
+</ol>
+<h3 id="giving-users-the-loadstring"><a class="header" href="#giving-users-the-loadstring">Giving users the loadstring</a></h3>
+<p>We're going to assume you distribute your script in a loadstring, user's will need to define their license key before your script executes, you can do this by giving your users a script such as this:</p>
+<pre><code class="language-lua">trial_key="";
+loadstring(game:HttpGet("script_url"))();
 </code></pre>
-<h2 id="after-obfuscation"><a class="header" href="#after-obfuscation">After Obfuscation</a></h2>
-<p>User's will need to set global <code>Key</code> with their license key from LinkGuard, you can make this easier by distributing your script in a loadstring:</p>
-<pre><code class="language-lua">getgenv().Key = "LICENSE_KEY";
-loadstring(game:HttpGet("SCRIPT_URL"))();
-</code></pre>
+<blockquote>
+<p>Instruct your users to paste the license key they receive after completion in-between the double quotes on the first line</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
 <p>This page teaches you how to use LinkGuard in your Python applications</p>
 <h2 id="before-distribution"><a class="header" href="#before-distribution">Before Distribution</a></h2>
@@ -325,23 +341,26 @@ if (!body.valid) {
 console.log("Valid License:", body);
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="terms-of-service"><a class="header" href="#terms-of-service">Terms of Service</a></h1>
-<p>as of 30/07/2024</p>
+<p>as of 07/08/2024</p>
 <ul>
-<li>By redeeming or creating a project you are automatically subject to these terms</li>
-<li>Do not use our services for illegal, malicous or adult content</li>
-<li>Do not attempt to bypass our reward systems</li>
-<li>Do not attempt to DDoS our services</li>
-<li>Violation of the terms above will result in a permanent blacklist from all our services</li>
+<li>By using our services you are automatically subject to these terms</li>
+<li>You cannot use our services for illegal, adult or malicious content</li>
+<li>You cannot attempt to reverse-engineer our services</li>
+<li>You cannot attempt to DDoS our services</li>
+<li>You cannot attempt to bypass our services</li>
+<li>You agree we can revoke your access at any time without valid reason and notice</li>
+<li>You acknowledge our service is not a licensing solution, secure license validation is your responsibility</li>
+<li>You acknowledge our service is not affiliated with linkvertise.com, lootlabs.gg, boost.ink, or any of our supported publishers</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="privacy-policy"><a class="header" href="#privacy-policy">Privacy Policy</a></h1>
-<p>as of 30/07/2024</p>
+<p>as of 07/08/2024</p>
 <ul>
-<li>When redeeming content we store your Discord ID, amount of completed &amp; failed links associated with this ID and your hashed IP address</li>
-<li>When redeeming content your Discord ID and amount of completed &amp; failed links associated with this ID are logged to content owners</li>
-<li>When creating a project we store project information and your hashed API-Key</li>
+<li>Redeeming content - We store your Discord ID, completions &amp; fails, we also obtain your joined servers from Discord to validate whether you are present in the content's server</li>
+<li>Creating content - We store required content information &amp; your hashed API-Key</li>
+<li>You can request a copy or deletion of your data by contacting us</li>
 </ul>
-<p><a href="https://www.hcaptcha.com/privacy">HCaptcha</a><br />
-<a href="https://discord.com/privacy">Discord</a></p>
+<p><a href="https://www.hcaptcha.com/privacy">HCaptcha Privacy</a><br />
+<a href="https://discord.com/privacy">Discord Privacy</a></p>
 
                     </main>
 
