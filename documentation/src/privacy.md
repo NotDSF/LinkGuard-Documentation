@@ -1,8 +1,9 @@
 # Privacy Policy
-as of 30/07/2024
-- When redeeming content we store your Discord ID, amount of completed & failed links associated with this ID and your hashed IP address
-- When redeeming content your Discord ID and amount of completed & failed links associated with this ID are logged to content owners
-- When creating a project we store project information and your hashed API-Key
+as of 07/08/2024
+- Redeeming content - We store your Discord ID, completions & fails, we also obtain your joined servers from Discord to validate whether you are present in the content's server
+- Creating content - We store required content information & your hashed API-Key
+- You can request a copy or deletion of your data by contacting us
 
-[HCaptcha](https://www.hcaptcha.com/privacy)                           
-[Discord](https://discord.com/privacy)
+
+[HCaptcha Privacy](https://www.hcaptcha.com/privacy)                           
+[Discord Privacy](https://discord.com/privacy)

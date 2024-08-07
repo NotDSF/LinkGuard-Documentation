@@ -1,7 +1,10 @@
 # Terms of Service
-as of 30/07/2024
-- By redeeming or creating a project you are automatically subject to these terms
-- Do not use our services for illegal, malicous or adult content
-- Do not attempt to bypass our reward systems
-- Do not attempt to DDoS our services
-- Violation of the terms above will result in a permanent blacklist from all our services
+as of 07/08/2024
+- By using our services you are automatically subject to these terms
+- You cannot use our services for illegal, adult or malicious content
+- You cannot attempt to reverse-engineer our services
+- You cannot attempt to DDoS our services
+- You cannot attempt to bypass our services
+- You agree we can revoke your access at any time without valid reason and notice
+- You acknowledge our service is not a licensing solution, secure license validation is your responsibility 
+- You acknowledge our service is not affiliated with linkvertise.com, lootlabs.gg, boost.ink, or any of our supported publishers
